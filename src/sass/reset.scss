@@ -14,8 +14,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   body {
     line-height: 1; }
   
-  ol, ul {
-    list-style: none; }
+  ol, ul, a {
+    list-style: none;
+    text-decoration: none;
+   }
   
   blockquote, q {
     quotes: none; }
