@@ -10,9 +10,9 @@ axios.defaults.params = {
 
 
 const fetchFilmsFn = (searchQuery) => {
-    // if (searchQuery === '') {
-    //     return;
-    // }
+    if (searchQuery === '') {
+        return;
+    }
     pageNumber = 1;
     axios(`/search/movie?query=${searchQuery}`)
     .then(res => console.log(res.data))
