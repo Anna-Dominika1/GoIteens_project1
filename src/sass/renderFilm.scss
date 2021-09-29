@@ -1,0 +1,92 @@
+
+.js-card-container{
+  display: flex;
+ justify-content: center;
+ flex-wrap: wrap; 
+ margin-bottom: 20px;
+}
+
+.card_headline{
+  margin: 5px  5px 5px 5px;
+  font-family: $font-title-card;
+  font-weight: 700;
+  font-size: 20px;
+  min-width: 5px;
+  max-width: 200px;
+  color: $white-grey;
+}
+.card{
+  min-width: 30px;
+  min-width: 80px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+  list-style: none;
+  background-color: $purple;
+  margin: 25px 25px 25px 30px ;
+  border-radius: 10px;
+  transition: 350ms linear;
+  cursor: pointer;
+  border: 3px solid $white-grey;
+
+}
+.card:hover{
+  -webkit-box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.26);
+-moz-box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.26);
+box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.26);
+
+}
+
+.card-menu_btn{
+margin: 5px 5px 5px 3px;
+}
+
+
+.img_if{
+border-radius: 10px;
+}
+
+
+
+
+.load_more {
+cursor: pointer;
+padding: 20px 40px;
+margin: 0 auto;
+background-color: $purple;
+border: none;
+border-radius: 10px;
+border: 3px solid $white-grey;
+}
+
+.load_more.load_more_text-content {
+display: none;
+}
+
+.raiting{
+  background-color: #ffffff;
+  color: $dark-purple;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.card-menu-rating{}
+.id_films{
+opacity: 0;
+pointer-events: none;
+visibility: hidden;
+
+}
+
+.main{
+  width: 100vw;
+  height: 100vh;
+}
+
+.films_section{
+margin: 0 auto;
+padding: 25px 0 15px 0;
+text-align: center;
+}
