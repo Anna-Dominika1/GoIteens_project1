@@ -8,6 +8,7 @@ import './apiFunctions';
 defaults.delay = 5000;
 const debounce = require('lodash.debounce');
 import * as apiFunctions from './apiFunctions.js';
+import './modalFilm.js'
 
 const input = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
@@ -25,3 +26,43 @@ searchBtn.addEventListener("click", expand);
 input.addEventListener('input', debounce((event) => {
   inputFn(event);
 }, 650));
+
+
+const modalBasicLightbox = basicLightbox.create(
+	document.querySelector('template')
+	)
+
+const openModal = document.getElementById('OpenModal');
+
+
+const onclick = () => {
+
+  modalBasicLightbox.show()
+const closeopenModal = document.getElementById('CloseModal');
+closeopenModal.addEventListener('click',onclose);
+
+};
+openModal.addEventListener('click',onclick);
+
+
+const onclose = () => {
+
+  modalBasicLightbox.close()
+  
+
+};
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('keydown', function(ea) {
+  if (ea.key === 'Escape') {
+    modalBasicLightbox.close()
+  }
+  });

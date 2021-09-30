@@ -21,6 +21,29 @@
         </form>
       </div>
     </header>
+
+    
+    <button class="infoFilmOpenModal" id="OpenModal"></button>
+   
+    <template>
+      <div class="backDropModal">
+      <div class="modal" >
+       <div class="infoFilmCloseModal" id="CloseModal"></div>
+      
+    <div class="background_modal" id="modal_id" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <h1 class="titleFilmModal">TitleFilm</h1>
+      <div class="infoFilmWrapper">
+      <div class="infoFilmImg" id="infoFilmImg"></div>
+      <div>
+      <p class="infoFilmText" id="infoFilmText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, doloremque.</p>
+      </div>
+    </div>
+      <div class="infoFilmTrailer" id="infoFilmTrailer">
+      </div>
+    </div>
+  </div>
+</div>
+    </template>
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>

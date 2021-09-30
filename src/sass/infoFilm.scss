@@ -1,0 +1,237 @@
+.infoFilmImg{
+    background-color: $grey;
+    width: 125px;
+    height: 185px;
+    border-radius: 10px;
+    
+}
+
+.titleFilmModal{
+    font-family : $font-title-card;
+    position: absolute;
+   
+}
+
+p{
+    font-family: $font-text-describe;
+}
+
+.infoFilmTrailer{
+    background-color: $purple;
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    border-radius: 10px;
+}
+
+.background_modal{
+    background-color: $white-grey;
+    height: 550px;
+    width: 550px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.infoFilmWrapper{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 25px 0 25px 0;
+  
+
+}
+
+.infoFilmText{
+    width: 100px;
+    }
+
+
+.infoFilmOpenModal{
+    padding: 7px 13px;
+    border-style: solid;
+    border-color: yellow;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    
+}
+
+.backDropModal{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(0,0,0,0.7402311266303396) 0%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoFilmCloseModal{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+.infoFilmCloseModal:before {
+    content: '+';
+    color: $dark-purple;
+    position: absolute;
+    z-index: 2;
+    transform: rotate(45deg);
+    font-size: 50px;
+    line-height: 1;
+    top: -5px;
+    left: 6px;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+}
+.infoFilmCloseModal:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: $dark-purple;
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+    transform: scale(0.01);
+}
+.infoFilmCloseModal:hover:after {
+    transform: scale(1);
+}
+.infoFilmCloseModal:hover:before {
+    transform: scale(0.8) rotate(45deg);
+    color: #fff;
+}
+
+
+
+@media screen and (max-width: 320px) {
+    .infoFilmImg{
+        background-color: $grey;
+        width: 100px;
+        height: 125px;
+    
+    }
+    
+    
+    .infoFilmTrailer{
+        background-color: $purple;
+        width: 250px;
+        height: 150px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+    
+    .background_modal{
+        background-color: $white-grey;
+        height: 400px;
+        width: 320px;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    
+    .infoFilmWrapper{
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 45px 0 25px 0;
+        
+    }
+    
+    .infoFilmText{
+        width: 100px;
+        }
+    
+    .titleFilmModal{
+      
+        display: none;
+        
+    }
+    
+    .infoFilmCloseModal{
+        width: 30px;
+        height: 30px;
+    }
+    .infoFilmCloseModal:before {
+        font-size: 40px;
+        line-height: 1;
+        top: -5px;
+        left: 4px;
+        transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .infoFilmImg{
+        width: 150px;
+        height: 175px;
+    }
+    
+    .infoFilmTrailer{
+        width: 450px;
+        height: 250px
+        
+    }
+    
+    .background_modal{
+        background-color: $white-grey;
+        height: 550px;
+        width: 550px;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    
+    .infoFilmWrapper{
+        width: 448px;
+        padding: 55px 0 55px 0;
+        
+    }
+ 
+    .infoFilmText{
+        width: 200px;
+    }
+    .titleFilmModal{
+    font-family : $font-title-card;
+    margin-top: 22%;
+    margin-left: 12%;
+        
+}
+}
+
+
+@media screen and (min-width: 1024px) {
+       
+    .infoFilmTrailer{
+        width: 500px;
+        height: 270px;
+        padding-bottom: 50px;
+    }
+    
+    .background_modal{
+        height: 600px;
+        width: 600px;
+    }
+    
+    .infoFilmWrapper{
+        width: 450px;
+        padding: 50px 0 50px 0;
+    }
+    
+    .infoFilmText{
+        width: 100px;
+        }
+
+    .titleFilmModal{
+        font-family : $font-title-card;
+        margin-top: 15%;
+        margin-left: 12%;
+                
+    }
+}
