@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css_actual/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <title>Filters</title>
@@ -13,24 +13,20 @@
 
     <aside class="filters">
         <div class="filters_box">
-            <div class="filters_wrapper">
-                <h2 class="filters_title text_colour">Фільтри</h2>
-                <div class="filters_types_box">
-                    <ul class="filters_popular filters_wrapper">
-                        <h3 class="filters_popular_name text_colour"><a class="text_colour" href="#">Популярне</a></h3>
-                            <li class="filters_popular_options text_colour"><a class="text_colour" href="#">За день</a></li>
-                            <li class="filters_popular_options text_colour"><a class="text_colour" href="#">За тиждень</a></li>
-                    </ul>
-                    <ul class="filters_date text_colour"><a class="text_colour" href="#"><h3>За рейтингом</h3></a></ul>
-                    <ul class="filters_favourite text_colour"><a class="text_colour" href="#"><h3>Улюблене</h3></ul>
-                    <ul class="filters_date text_colour"><a class="text_colour" href="#"><h3>Останні фільми</h3></a></ul>
-                </div>
+            <div id="filters" class="filters_types_box">
+                <h2 class="filters_title text_general">Фільтри</h2>
+                <ul id="popular" class="filters_name text_general"><h3><a class="text_general" href="#">Популярне</a></h3></ul>
+                <ul id="rate" class="filters_name text_general"><h3><a class="text_general" href="#">За рейтингом</a></h3></ul>
+                <ul id="lastfilm" class="filters_name text_general"><h3><a class="text_general" href="#">Останні фільми</a></h3></ul>
             </div>
-            <div class="button_wrapper">
-                <button class="button"><span style="font-size: 24px;" class="material-icons">settings</span></button>
+            <div class="button_box">
+                <div id="button" class="button_wrapper">
+                    <button class="button"><span style="font-size: 50px; color: white;" class="material-icons">settings</span></button>
+                </div>
             </div>
         </div>
     </aside>
 
+    <script src="/js/index.js"></script>
 </body>
 </html>
