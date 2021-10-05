@@ -1,12 +1,13 @@
 {{#each results}}
 <li class="card">
+    <span name = 'id_film' class="id_films">{{id}}</span>
     <div class="div_wrapper">
         {{#if poster_path}}
         <img class="img_if" width="250" height="350" class="card__image"
             src="https://image.tmdb.org/t/p/w300{{poster_path}}" />
         {{/if}}
         {{#unless poster_path}}
-        <img class="img_unless" width="250" height="350" class="card__image" src="./images/no_poster.jpg"
+        <img class="img_unless" width="250" height="350" class="card__image" src="https://png.pngtree.com/png-vector/20201224/ourlarge/pngtree-error-404-page-not-found-png-image_2598541.jpg"
             alt="no-poster" />
 
         {{/unless}}
@@ -15,9 +16,8 @@
         <div class="raiting">
             <h3 class="card-menu-rating">{{vote_average}}</h3>
         </div>
-        <div class="this.original-language"></div>
 
-        <h2 class="card_headline">{{title}} <span class="id_films">{{id}}</span> </h2>
+        <h2 class="card_headline">{{title}}</h2>
 
         {{!-- <button class="like-button"></button> --}}
 

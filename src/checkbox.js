@@ -3,7 +3,6 @@ const Theme = {
     DARK: 'dark-theme',
 };
 
-
 const querySelector = {
     input: document.querySelector('.toggle--checkbox'),
     body: document.querySelector('body'),
@@ -24,7 +23,6 @@ if (localStorage.getItem('theme') === Theme.DARK) {
     querySelector.input.checked = true
     querySelector.body.classList.remove(Theme.LIGHT)
     querySelector.body.classList.add(Theme.DARK)
-
 } else {
     querySelector.input.checked = false
     querySelector.body.classList.remove(Theme.DARK)

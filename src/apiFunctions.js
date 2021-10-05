@@ -11,17 +11,17 @@ const fetchFilmsFn = (searchQuery) => {
     }
     pageNumber = 1;
     checked = true;
-   return fetch(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=uk-UA&page=1&include_image_language=ua&page=${pageNumber}`)
+   return fetch(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=uk-UA&include_image_language=uk-UA&page=${pageNumber}`)
     .then(res => res.json())
     .catch(err => {
-        console.warn(err)
+        console.error(err)
     })
 };
 
 const defaultFetchFilm = () => {
     pageNumber = 1;
-   return fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=uk-UA&page=1&include_image_language=ua&page=${pageNumber}`).then(res => res.json())
-        .catch(error => console.warn(error))
+   return fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=uk-UA&include_image_language=uk-Ua&page=${pageNumber}`).then(res => res.json())
+        .catch(error => console.error(error))
 
 }
 
@@ -29,16 +29,24 @@ const defaultFetchFilm = () => {
 const paginationFetchFilms = (searchQuery) => {
     pageNumber += 1;
     if (checked) {
-        return fetch(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=uk-UA&page=1&include_image_language=ua&page=${pageNumber}`)
+        return fetch(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=uk-UA&include_image_language=uk-UA&page=${pageNumber}`)
     .then(res => res.json())
     .catch(err => {
-        console.warn(err)
+        console.error(err)
     })
     }
     checked = false;
-    return fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=uk-UA&page=1&include_image_language=ua&page=${pageNumber}`).then(res => res.json())
-        .catch(error => console.log(error))
+    return fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=uk-UA&include_image_language=uk-UA&page=${pageNumber}`).then(res => res.json())
+        .catch(error => console.error(error))
 }
 
+const fetchInfoFilm = (id_film) => {
+    return fetch(`${BASE_URL}/movie/${id_film}?api_key=${API_KEY}&language=uk-UA&include_image_language=uk-UA`).then(res => res.json()).catch(error => console.error(error));
+};
 
-export {fetchFilmsFn, defaultFetchFilm, paginationFetchFilms};
+const fetchTrailerFilm = (id_film) => {
+    return fetch(`${BASE_URL}/movie/${id_film}/videos?api_key=${API_KEY}`).then(res => res.json()).catch(error => console.error(error));
+};
+
+
+export {fetchFilmsFn, defaultFetchFilm, paginationFetchFilms, fetchInfoFilm, fetchTrailerFilm};
