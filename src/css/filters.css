@@ -96,9 +96,9 @@ body {
         border-radius: 0 20px 20px 0;
         position: absolute;
         left: -250px;
-        animation-name: moveOn;
+        /* animation-name: moveOff;
         animation-duration: 1.5s;
-        animation-fill-mode: both;
+        animation-fill-mode: both; */
     }
     
     .text_general {
@@ -114,13 +114,23 @@ body {
         position: absolute;
         bottom: 70px;
         left: 70px;
+        background-color: #833ab4;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .button_wrapper:hover .button{
+        transform: rotate(90deg);
     }
     
     .button {
         display: flex;
         align-self: center;
-        background-color: #833ab4;
-        border-radius: 10px;
+        transition: 500ms linear;
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
     }
 
     .filters_title {
@@ -131,14 +141,16 @@ body {
         font-size: 21px;
     }
 
-    .switcher {
-        animation-name: moveOff;
+    .switcher_on {
+        animation-name: moveOn;
         animation-duration: 1.5s;
         animation-fill-mode: both;
     }
 
     .switcher_off {
-
+        animation-name: moveOff;
+        animation-duration: 1.5s;
+        animation-fill-mode: both;
     }
 
     @keyframes moveOn {
