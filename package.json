@@ -6,17 +6,17 @@
   "homepage": "https://Anna-Dominika1.github.io/GoIteens_project1",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /GoIteens_project1/"
+    "build": "parcel build src/*.html --public-url ./GoIteens_project1/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/GoIteens_project1.git"
+    "url": "git+https://github.com/Anna-Dominika1/GoIteens_project1.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/GoIteens_project1/issues"
+    "url": "https://github.com/Anna-Dominika1/GoIteens_project1/issues"
   },
   "devDependencies": {
     "@pnotify/core": "^5.2.0",
