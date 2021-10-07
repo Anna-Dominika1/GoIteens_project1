@@ -73,8 +73,7 @@ input.addEventListener(
 );
 
 const loadMoreBtn = async () => {
-  await apiFunctions
-    .paginationFetchFilms(document.querySelector('.input').value)
+  await apiFunctions.paginationFetchFilms(document.querySelector('.input').value)
     .then(verifyDataLength)
     .then(rendersFilm)
     .catch(err => {
@@ -90,8 +89,6 @@ const loadMoreBtn = async () => {
 let modalBasicLightbox;
 
 const onClickCard = async (event) => {
-  console.log(event.target);
-  console.log(event.target.firstElementChild.textContent);
   if (event.target.nodeName === 'UL') return;
   await apiFunctions.fetchInfoFilm(
       +event.target.firstElementChild.textContent
@@ -102,6 +99,10 @@ const onClickCard = async (event) => {
       const closeModal = document.querySelector('#CloseModal');
       closeModal.addEventListener('click', onclose);
       window.addEventListener('keydown', keyCloseModal);
+      document.querySelector('.backDropModal').addEventListener('click', clickOnBackdrop);
+      setTimeout(() => {
+        document.querySelector('.backDropModal').classList.add('opacityBackdrop')
+      }, 200)
     })
     .catch(err => {
       console.error(err);
@@ -123,6 +124,15 @@ getRefs.btnLoadMore.addEventListener('click', loadMoreBtn);
 getRefs.cardContainer.addEventListener('click', onClickCard);
 const onclose = () => {
   modalBasicLightbox.close();
+  setTimeout(() => {
+    document.querySelector('.backDropModal').classList.remove('opacityBackdrop')
+  }, 200)
+};
+
+const clickOnBackdrop = (event) => {
+  if(event.target === event.currentTarget) {
+    return onclose();
+  }
 };
 
 const keyCloseModal = ev => {
@@ -131,3 +141,48 @@ const keyCloseModal = ev => {
   }
   window.removeEventListener('keydown', keyCloseModal);
 };
+
+
+const popular = document.querySelector('#popular');
+const rate = document.querySelector('#rate');
+const lastfilm = document.querySelector('#lastfilm');
+
+const button = document.querySelector('#button');
+const filters = document.querySelector('#filters');
+
+let check = false;
+
+const filtersButton = () => {
+  if(!filters.classList.contains('switcher_on')) {
+    filters.classList.add('switcher_on');
+  }
+    if (check === true) {
+        check = false;
+        return filters.classList.replace('switcher_on', 'switcher_off');
+    }
+    else {
+        filters.classList.replace('switcher_off', 'switcher_on');
+        check = true;
+    }
+}
+
+button.addEventListener('click', filtersButton);
+
+popular.addEventListener('click', () => {
+  getRefs.cardContainer.innerHTML = '';
+  apiFunctions.getPopularFilms().then(res => rendersFilm(res));
+  filters.classList.replace('switcher_on', 'switcher_off');
+  check = false;
+});
+rate.addEventListener('click', () => {
+  getRefs.cardContainer.innerHTML = '';
+  apiFunctions.defaultFetchFilm().then(res => rendersFilm(res));
+  filters.classList.replace('switcher_on', 'switcher_off');
+  check = false;
+});
+lastfilm.addEventListener('click', () => {
+  getRefs.cardContainer.innerHTML = '';
+  apiFunctions.getUpcomingFilms().then(res => rendersFilm(res));
+  filters.classList.replace('switcher_on', 'switcher_off');
+  check = false;
+});

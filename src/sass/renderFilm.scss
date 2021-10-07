@@ -68,6 +68,9 @@ font-size: 15px;
 font-family: $font-title-card;
 color: $white-grey;
 margin-bottom: 20px;
+@media screen and (min-width: 320px) {
+  margin-bottom: 80px;
+}
 }
 
 .raiting{
